@@ -1,0 +1,8 @@
+/env
+/trained_models
+/uploads
+/visualizations
+/__pycache__
+/logs
+/static
+/temp
