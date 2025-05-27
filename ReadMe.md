@@ -1,7 +1,5 @@
 # ML Training Platform - Comprehensive Usage Guide
 
-This guide provides complete examples for all endpoints and data types supported by the ML Training Platform API.
-
 ## 🚀 Quick Start
 
 ```bash
@@ -973,7 +971,3 @@ curl -X GET "http://localhost:8000/visualizations/dataset/{dataset_id}?user_name
 - Apply postprocessing for better model performance
 - Consider ensemble methods for critical applications
 - Implement caching for frequently used models
-
----
-
-This comprehensive guide covers all the endpoints and functionality available in the ML Training Platform. Each example includes realistic data formats, parameters, and expected responses to help you get started quickly with any type of machine learning task.
