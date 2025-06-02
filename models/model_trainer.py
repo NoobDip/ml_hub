@@ -125,14 +125,13 @@ class ModelTrainer:
             
             model_type = config.model_type
             task_type = config.task_type
+            print(metadata)
             print(f"Training {model_type} for {task_type} task with dataset {config.dataset_id}")
-            
+            print(metadata.get('data_type', ''))
             if task_type in ['classification', 'regression'] and isinstance(X, pd.DataFrame):
                 await self._train_tabular_model(task_id, config, X, y, metadata, training_tasks, viz_manager)
-            elif 'image' in metadata.get('data_type', ''):
-                await self._train_image_model(task_id, config, X, y, metadata, training_tasks, viz_manager)
             else:
-                raise ValueError(f"Unsupported combination: {model_type} for {task_type}")
+                await self._train_image_model(task_id, config, X, y, metadata, training_tasks, viz_manager)
                 
         except Exception as e:
             logger.error(f"Training failed for task {task_id}: {str(e)}")
